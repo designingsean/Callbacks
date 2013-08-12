@@ -3,6 +3,8 @@ calls.controller('calls', function calls($scope, usersApi, callsApi, notesApi) {
     $scope.noteData = {};
     $scope.callData = {};
 
+    var z = "-0" + (moment(new Date()).zone())/60 + "00";
+
     usersApi.get().then(function(response) {
         $scope.users = response.data;
     });
@@ -10,6 +12,9 @@ calls.controller('calls', function calls($scope, usersApi, callsApi, notesApi) {
     function getCalls() {
         callsApi.get(0).then(function(response) {
             $scope.calls = response.data;
+            angular.forEach($scope.calls, function(value, key) {
+                $scope.calls[key].received += z;
+            });
         });
     }
 
@@ -30,6 +35,9 @@ calls.controller('calls', function calls($scope, usersApi, callsApi, notesApi) {
     $scope.showNotes = function(callID) {
         notesApi.get(callID).then(function(response) {
             $scope.notes = response.data;
+            angular.forEach($scope.notes, function(value, key) {
+                $scope.notes[key].notesDate += z;
+            });
         });
         $scope.currentCall = callID;
     };
