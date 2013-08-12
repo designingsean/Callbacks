@@ -9,9 +9,13 @@ Features
 
 Todo
 ----
-1. Admin area to review previous calls.
+1. Add in better date/time and phone number handling.
 
-2. Cleaner integration with its sister app, Timeclock
+2. Fix timezone issue.
+
+2. Admin area to review previous calls.
+
+3. Cleaner integration with its sister app, Timeclock
 
 License
 -------
