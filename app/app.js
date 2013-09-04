@@ -1,4 +1,4 @@
-var calls = angular.module("calls", ["ui.bootstrap"])
+var calls = angular.module("calls", ["$strap.directives"])
 .config(function($locationProvider, $routeProvider) {
     $routeProvider
         .when("/", { controller: "calls", templateUrl: "app/views/calls.html" })
