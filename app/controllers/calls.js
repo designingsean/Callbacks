@@ -25,6 +25,7 @@ calls.controller('calls', function calls($scope, usersApi, callsApi, notesApi) {
         callsApi.add($scope.callData).then(function(response) {
             getCalls();
             $scope.callData = {};
+            $scope.callData.date = moment().format("YYYY-MM-DD");
         });
     };
 
