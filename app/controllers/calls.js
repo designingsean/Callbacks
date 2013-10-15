@@ -3,6 +3,8 @@ calls.controller('calls', function calls($scope, usersApi, callsApi, notesApi) {
     $scope.noteData = {};
     $scope.callData = {};
 
+    $scope.callData.date = moment().format("YYYY-MM-DD");
+
     var z = "-0" + (moment(new Date()).zone())/60 + "00";
 
     usersApi.get().then(function(response) {
